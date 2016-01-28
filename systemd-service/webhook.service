@@ -1,0 +1,13 @@
+[Unit]
+Description=Webhook
+
+[Service]
+TimeoutStartSec=0
+Type=simple
+User=camil
+WorkingDirectory=/opt/bin
+ExecStart=/opt/bin/webhook --hooks /home/camil/prod/scripts/deploy.json
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
